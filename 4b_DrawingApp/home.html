@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Drawing App with Images</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"
+      integrity="sha512-bcfltY+lNLlNxz38yBBm/HLaUB1gTV6I0e+fahbF9pS6roIdzUytozWdnFV8ZnM6cSAG5EbmO0ag0a/fLZSG4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      canvas {
+        border: 3px solid black;
+        margin: 10px;
+      }
+
+      #controls {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvasContainer"></div>
+    <div id="controls">
+      <label>Color: </label>
+      <input type="color" id="colorPicker" value="#000000" />
+
+      <label>Stroke Width: </label>
+      <select id="strokeWidthPicker">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Line Style: </label>
+      <input type="radio" name="lineStyle" value="normal" checked /> Normal
+      <input type="radio" name="lineStyle" value="tapered" /> Tapered
+
+      <label
+        ><input type="checkbox" id="toggleBackground" checked /> Show Background
+        Images</label
+      >
+      <button id="nextBtn" onclick="nextPiece()">Next Piece</button>
+      <button id="assembleBtn" onclick="assemblePieces()" disabled>
+        Put it All Together
+      </button>
+    </div>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
